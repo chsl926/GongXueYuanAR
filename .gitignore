@@ -1,0 +1,75 @@
+# Specifies intentionally untracked files to ignore when using Git
+# http://git-scm.com/docs/gitignore
+=============== 
+Unity generated
+===============
+#Assets/
+#ProjectSettings/
+Temp/
+Library/
+Build/
+Designs/
+OutPut/
+AssetBundles/
+
+=====================================
+Visual Studio / MonoDevelop generated
+=====================================
+ExportedObj/
+obj/
+*.svd
+*.userprefs
+*.csproj
+*.pidb
+*.suo
+*.sln
+*.user
+*.unityproj
+*.booproj
+/UnityVS/
+
+============
+OS generated
+============
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+/.project
+/.settings/
+/builds/
+
+============
+Intellij IDEA
+============
+.idea
+#/ProjectSettings/ProjectSettings.asset
+#/ProjectSettings/ProjectVersion.txt
+
+============
+Export binaries
+============
+BuildExport/
+#/ProjectSettings/ProjectSettings.asset
+#/AssetBundles
+
+============
+SyncToy
+============
+*SyncToy*
+
+============
+Replay
+============
+/Assets/Replay.meta
+/Assets/Replay
+
+============
+rSync
+============
+*UploadRsync*
+/Tools
+*-upload.bat*

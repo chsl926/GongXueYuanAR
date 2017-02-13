@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Project Name="AR.luaprj" >
+    <Filter Name="Lua" >
+        <LuaFile RelativePath=".\..\..\Assets\Lua\containers.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\debugger.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\decoder.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\descriptor.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\encoder.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\eventlib.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\events.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\listener.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\protobuf.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\text_format.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\type_checkers.lua" />
+        <LuaFile RelativePath=".\..\..\Assets\Lua\wire_format.lua" />
+        <Filter Name="3rd" >
+            <Filter Name="cjson" >
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\cjson\json2lua.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\cjson\lua2json.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\cjson\test.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\cjson\util.lua" />
+            </Filter>
+            <Filter Name="luabitop" >
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\luabitop\bitbench.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\luabitop\bittest.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\luabitop\installpath.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\luabitop\md5test.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\luabitop\nsievebits.lua" />
+                <Filter Name="doc" >
+                    <Filter Name="img" />
+                </Filter>
+            </Filter>
+            <Filter Name="pbc" >
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\pbc\parser.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\pbc\protobuf.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\pbc\test.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\pbc\test2.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\pbc\testparser.lua" />
+            </Filter>
+            <Filter Name="pblua" >
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\pblua\login_pb.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\pblua\person_pb.lua" />
+            </Filter>
+            <Filter Name="sproto" >
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\sproto\print_r.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\sproto\sproto.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\sproto\sprotoparser.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\sproto\test.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\sproto\testall.lua" />
+                <LuaFile RelativePath=".\..\..\Assets\Lua\3rd\sproto\testrpc.lua" />
+            </Filter>
+        </Filter>
+        <Filter Name="Common" >
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Common\ColliderFroC.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Common\define.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Common\functions.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Common\protocal.lua" />
+        </Filter>
+        <Filter Name="Controller" >
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Controller\MessageCtrl.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Controller\PromptCtrl.lua" />
+        </Filter>
+        <Filter Name="Logic" >
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Logic\CtrlManager.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Logic\GameManager.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Logic\LuaClass.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Logic\Network.lua" />
+        </Filter>
+        <Filter Name="Main" >
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Main\ARMain.lua" />
+        </Filter>
+        <Filter Name="System" >
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Bounds.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\class.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\ColliderEvent.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Color.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Coroutine.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Event.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Global.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Layer.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\List.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Main.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Math.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Plane.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Quaternion.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Ray.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Raycast.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Set.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\strict.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Test.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Time.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Timer.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Touch.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Vector2.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Vector3.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Vector4.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\System\Wrap.lua" />
+        </Filter>
+        <Filter Name="Tank" >
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Tank\EnemyManager.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Tank\ImageTargetbehaviour.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Tank\PlayerManager.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Tank\Shot.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\Tank\Tank.lua" />
+        </Filter>
+        <Filter Name="View" >
+            <LuaFile RelativePath=".\..\..\Assets\Lua\View\MessagePanel.lua" />
+            <LuaFile RelativePath=".\..\..\Assets\Lua\View\PromptPanel.lua" />
+        </Filter>
+    </Filter>
+</Project>
