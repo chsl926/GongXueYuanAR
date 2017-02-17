@@ -39,7 +39,7 @@ function Bullet.Update()
     end
 
     this.gameObject.transform:LookAt(this.enemy.transform);
-    this.gameObject.transform:Translate(-this.enemy.transform.forward*0.05);--*(Time.deltaTime*0.5)
+    this.gameObject.transform:Translate(-this.enemy.transform.forward*0.5);--*(Time.deltaTime*0.5)
 end
 
 function Bullet.DesObj()

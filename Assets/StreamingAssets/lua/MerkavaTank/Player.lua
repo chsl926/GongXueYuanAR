@@ -81,7 +81,7 @@ function Player.Show()
                 bulletObj.transform.parent = ImageTarget.gameObject.transform;
                 bulletObj.transform.position = this.firePoint.transform.position;
                 bulletObj:AddComponent(ColliderEvent.GetClassType());
-                require('Tank.Bullet')
+                require('MerkavaTank.Bullet')
                 this.bullet = Bullet:Start();
                 this.bullet.Init(bulletObj, this.enemy);
             end

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEditor;
-using YZL.Compress.GZip;
+//using YZL.Compress.GZip;
 using YZL.Compress.LZMA;
 using YZL.Compress.UPK;
 

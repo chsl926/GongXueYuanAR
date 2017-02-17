@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using YZL.Compress.GZip;
+//using YZL.Compress.GZip;
 using YZL.Compress.LZMA;
 using YZL.Compress.UPK;
 public class CompressTest : MonoBehaviour {
@@ -18,7 +18,7 @@ public class CompressTest : MonoBehaviour {
 
         if (GUI.Button(new Rect(Screen.width / 2 + 70, 200, 140, 80), "GZIP压缩文件"))
         {
-            GZipFile.CompressAsync(Application.dataPath + "/music.mp3", Application.dataPath + "/music.gzip", ShowProgress);
+           // GZipFile.CompressAsync(Application.dataPath + "/music.mp3", Application.dataPath + "/music.gzip", ShowProgress);
         }
         if (GUI.Button(new Rect(Screen.width / 2 - 210, 320, 140, 80), "LMZA解压文件"))
         {
@@ -26,7 +26,7 @@ public class CompressTest : MonoBehaviour {
         }
         if (GUI.Button(new Rect(Screen.width / 2 + 70, 320, 140, 80), "GZIP解压文件"))
         {
-            GZipFile.DeCompressAsync(Application.dataPath + "/music.gzip", Application.dataPath + "/gzipmusic.mp3", ShowProgress);
+           // GZipFile.DeCompressAsync(Application.dataPath + "/music.gzip", Application.dataPath + "/gzipmusic.mp3", ShowProgress);
         }
         if (GUI.Button(new Rect(Screen.width / 2 - 210, 440, 140, 80), "UPK打包文件夹"))
         {

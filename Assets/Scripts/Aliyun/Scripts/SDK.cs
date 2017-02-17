@@ -159,31 +159,31 @@ public class SDK : MonoBehaviour
 #elif UNITY_IPHONE
 	public class IOS
 	{
-		[DllImport("__Internal")]
-		public static extern int GetCount ();
-		[DllImport("__Internal")]
-		public static extern string contactName (int i);
-		[DllImport("__Internal")]
-		public static extern string phoneNumber (int i);				
+		//[DllImport("__Internal")]
+		//public static extern int GetCount ();
+		//[DllImport("__Internal")]
+		//public static extern string contactName (int i);
+		//[DllImport("__Internal")]
+		//public static extern string phoneNumber (int i);				
 		
-		[DllImport("__Internal")]
-		public static extern void StartSpeak (string strFile);	
-		[DllImport("__Internal")]
-		public static extern void StopSpeak ();	
-		[DllImport("__Internal")]
-		public static extern float PlaySpeak (string strFile);	
-		[DllImport("__Internal")]
-		public static extern void DelSpeak ();	
+		//[DllImport("__Internal")]
+		//public static extern void StartSpeak (string strFile);	
+		//[DllImport("__Internal")]
+		//public static extern void StopSpeak ();	
+		//[DllImport("__Internal")]
+		//public static extern float PlaySpeak (string strFile);	
+		//[DllImport("__Internal")]
+		//public static extern void DelSpeak ();	
 		
-		[DllImport("__Internal")]
-		public static extern string getGPSstring ();	
-		[DllImport("__Internal")]
-		public static extern void TakePhoto ();	
-        [DllImport("__Internal")]
-		public static extern string GetCharSpellCode(string CnChar);
+		//[DllImport("__Internal")]
+		//public static extern string getGPSstring ();	
+		//[DllImport("__Internal")]
+		//public static extern void TakePhoto ();	
+  //      [DllImport("__Internal")]
+		//public static extern string GetCharSpellCode(string CnChar);
 
-    	[DllImport("__Internal")]
-		public static extern string GetIOSVersion ();	
+  //  	[DllImport("__Internal")]
+		//public static extern string GetIOSVersion ();	
 	}
 	public static readonly string _aliTarget 	=	"_ios";
 	public static string _pathSpeak ;
@@ -195,88 +195,88 @@ public class SDK : MonoBehaviour
 		CheckDirWithFile(_pathSpeak);
         InitThreadPool();
 	}
-    public static string GetIOSVersion()
-    {
-        return IOS.GetIOSVersion();
-    }
-	//通讯录
-	public static int GetCount()//人数
-	{
-		return	IOS.GetCount();
-	}
-	public static string contactName(int i)//第i位的名字 小于人数
-	{
-		return  IOS.contactName(i);
-	}
-	public static string phoneNumber(int i)//第i位的号码 小于人数
-	{
-		return  IOS.phoneNumber(i);
-	}
-	//语音
-	public static void StartSpeak(string str)//开始录音 parm 录音文件名 如"test" "test.**"
-	{
-		_strSpeak = str;
-		IOS.StartSpeak (_pathLocal+_pathSpeak+str);
-	}
-	public static void StopSpeak()//结束录音
-	{
-		if(_strSpeak=="")
-			return;
-		IOS.StopSpeak ();
+ //   public static string GetIOSVersion()
+ //   {
+ //       return IOS.GetIOSVersion();
+ //   }
+	////通讯录
+	//public static int GetCount()//人数
+	//{
+	//	return	IOS.GetCount();
+	//}
+	//public static string contactName(int i)//第i位的名字 小于人数
+	//{
+	//	return  IOS.contactName(i);
+	//}
+	//public static string phoneNumber(int i)//第i位的号码 小于人数
+	//{
+	//	return  IOS.phoneNumber(i);
+	//}
+	////语音
+	//public static void StartSpeak(string str)//开始录音 parm 录音文件名 如"test" "test.**"
+	//{
+	//	_strSpeak = str;
+	//	IOS.StartSpeak (_pathLocal+_pathSpeak+str);
+	//}
+	//public static void StopSpeak()//结束录音
+	//{
+	//	if(_strSpeak=="")
+	//		return;
+	//	IOS.StopSpeak ();
 
-         ali.bShutdown=false;
-         Interlocked.Increment(ref ali.nCookie);
-         SomeState pa = new SomeState(ali.nCookie,string.Format("speak/"+_strSpeak),_pathLocal+_pathSpeak+_strSpeak, "", true, ALI_TYPE.UPLOAD_SPEAK);
-         ThreadPool.QueueUserWorkItem(new WaitCallback(ali.UpLoad), pa);
-        _strSpeak="";
-        pa=null;
-	}
-	public static float PlaySpeak(string str)//开始播放 parm 语音文件名 如"test" "test.**" 返回语音长度
-	{
-		_strPlay = str;
-		if(File.Exists(_pathLocal+_pathSpeak + _strPlay))//判断本地是否有
-		{
-			_fSpeakLenth= IOS.PlaySpeak (_pathLocal+_pathSpeak+_strPlay);
-			SpeakAction(_fSpeakLenth,true);
-			return _fSpeakLenth;
-		}
-		else
-		{			
-            ali.bShutdown=false;
-            Interlocked.Increment(ref ali.nCookie);
-            SomeState pa = new SomeState(ali.nCookie,"speak/"+_strPlay,_pathLocal+_pathSpeak+_strPlay, "", true, ALI_TYPE.DOWNLOAD_SPEAK);
-            ThreadPool.QueueUserWorkItem(new WaitCallback(ali.down), pa);
-            pa=null;
-            return 0;
-		}
-	}
-	public static void DelSpeak()//结束播放
-	{
-		IOS.DelSpeak ();
-	}
-	//定位
-	public static string getGPSstring()//定位信息 返回 "经度,纬度"
-	{
-		return IOS.getGPSstring ();
-	}
-	public static void TakePhoto()
-	{
-		IOS.TakePhoto();
-	}
-	public void GetActive(string strVal)
-	{
-		GetActiveAction(strVal);
-	}
-	public void GetPhoto(string strImage)
-	{ 
-		byte[] bt = System.Convert.FromBase64String(strImage);
-		GetPhotoAction(bt);
-	}
-	public static string GetCharSpellCode(string CnChar)
-    {
-		string str=IOS.GetCharSpellCode(CnChar);
-        return str.ToUpper();
-    }
+ //        ali.bShutdown=false;
+ //        Interlocked.Increment(ref ali.nCookie);
+ //        SomeState pa = new SomeState(ali.nCookie,string.Format("speak/"+_strSpeak),_pathLocal+_pathSpeak+_strSpeak, "", true, ALI_TYPE.UPLOAD_SPEAK);
+ //        ThreadPool.QueueUserWorkItem(new WaitCallback(ali.UpLoad), pa);
+ //       _strSpeak="";
+ //       pa=null;
+	//}
+	//public static float PlaySpeak(string str)//开始播放 parm 语音文件名 如"test" "test.**" 返回语音长度
+	//{
+	//	_strPlay = str;
+	//	if(File.Exists(_pathLocal+_pathSpeak + _strPlay))//判断本地是否有
+	//	{
+	//		_fSpeakLenth= IOS.PlaySpeak (_pathLocal+_pathSpeak+_strPlay);
+	//		SpeakAction(_fSpeakLenth,true);
+	//		return _fSpeakLenth;
+	//	}
+	//	else
+	//	{			
+ //           ali.bShutdown=false;
+ //           Interlocked.Increment(ref ali.nCookie);
+ //           SomeState pa = new SomeState(ali.nCookie,"speak/"+_strPlay,_pathLocal+_pathSpeak+_strPlay, "", true, ALI_TYPE.DOWNLOAD_SPEAK);
+ //           ThreadPool.QueueUserWorkItem(new WaitCallback(ali.down), pa);
+ //           pa=null;
+ //           return 0;
+	//	}
+	//}
+	//public static void DelSpeak()//结束播放
+	//{
+	//	IOS.DelSpeak ();
+	//}
+	////定位
+	//public static string getGPSstring()//定位信息 返回 "经度,纬度"
+	//{
+	//	return IOS.getGPSstring ();
+	//}
+	//public static void TakePhoto()
+	//{
+	//	IOS.TakePhoto();
+	//}
+	//public void GetActive(string strVal)
+	//{
+	//	GetActiveAction(strVal);
+	//}
+	//public void GetPhoto(string strImage)
+	//{ 
+	//	byte[] bt = System.Convert.FromBase64String(strImage);
+	//	GetPhotoAction(bt);
+	//}
+	//public static string GetCharSpellCode(string CnChar)
+ //   {
+	//	string str=IOS.GetCharSpellCode(CnChar);
+ //       return str.ToUpper();
+ //   }
 #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
     public static readonly string _aliTarget = "_pc";
     public static string _pathLocal = "";
@@ -583,7 +583,7 @@ public class SDK : MonoBehaviour
     #endregion
 #endif
 
-   
+
     #region 委托事件
 
     //下载（场景和资源包）
@@ -1009,6 +1009,7 @@ public class SDK : MonoBehaviour
 
     private IEnumerator LoadText(SomeState state)
     {
+
         ShowGui.info += "LoadText: "+ _pathUrl + state.localName + "\n";
         WWW www2 = new WWW(_pathUrl+ state.localName);
         yield return www2;

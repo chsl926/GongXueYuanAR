@@ -120,9 +120,9 @@ public class test : MonoBehaviour {
             {
                 GUI.DrawTexture(new Rect(0,0,200,200),tex);
             }
-			if (GUI.Button (new Rect (100, 0, 100, 40), "得到个数")) {
-				str3 =SDK.GetCount().ToString();
-			}
+			//if (GUI.Button (new Rect (100, 0, 100, 40), "得到个数")) {
+			//	str3 =SDK.GetCount().ToString();
+			//}
             //if (GUI.Button(new Rect(210, 0, 100, 40), "开始截屏"))
             //{
             //    rm.StartMovie();
@@ -135,30 +135,30 @@ public class test : MonoBehaviour {
             //    rm.MakeGif();
             //    //RecordMovie.StartMovie("screen");
             //}
-			if (GUI.Button (new Rect (100, 50, 100, 40), "得到人名")) {
-				str1 =SDK.contactName(0);
-			}
-			if (GUI.Button (new Rect (100, 100, 100, 40), "得到电话")) {
-				str2 =SDK.phoneNumber(0);
-			}
-			if (GUI.Button (new Rect (100, 150, 100, 40), "StartSpeak")) {
-				SDK.StartSpeak("test4");
-			}
-			if (GUI.Button (new Rect (100, 200, 100, 40), "StopSpeak")) {
-				SDK.StopSpeak();
-			}
-			if (GUI.Button (new Rect (100, 250, 100, 40), "PlaySpeak")) {
-				SDK.PlaySpeak("test4").ToString();
-			}
-			if (GUI.Button (new Rect (100, 300, 100, 40), "DelSpeak")) {
-				SDK.DelSpeak();
-			}
-			if (GUI.Button (new Rect (100, 350, 100, 40), "getGPSstring")) {
-				str6 =SDK.getGPSstring();
-			}
-			if (GUI.Button (new Rect (220, 350, 100, 40), "打开相册选图片")) {
-				SDK.TakePhoto();
-			}
+			//if (GUI.Button (new Rect (100, 50, 100, 40), "得到人名")) {
+			//	str1 =SDK.contactName(0);
+			//}
+			//if (GUI.Button (new Rect (100, 100, 100, 40), "得到电话")) {
+			//	str2 =SDK.phoneNumber(0);
+			//}
+			//if (GUI.Button (new Rect (100, 150, 100, 40), "StartSpeak")) {
+			//	SDK.StartSpeak("test4");
+			//}
+			//if (GUI.Button (new Rect (100, 200, 100, 40), "StopSpeak")) {
+			//	SDK.StopSpeak();
+			//}
+			//if (GUI.Button (new Rect (100, 250, 100, 40), "PlaySpeak")) {
+			//	SDK.PlaySpeak("test4").ToString();
+			//}
+			//if (GUI.Button (new Rect (100, 300, 100, 40), "DelSpeak")) {
+			//	SDK.DelSpeak();
+			//}
+			//if (GUI.Button (new Rect (100, 350, 100, 40), "getGPSstring")) {
+			//	str6 =SDK.getGPSstring();
+			//}
+			//if (GUI.Button (new Rect (220, 350, 100, 40), "打开相册选图片")) {
+			//	SDK.TakePhoto();
+			//}
 			if (GUI.Button (new Rect (100, 400, 100, 40), "加载场景")) {
 				//SDK.LoadScene("paopao/scene/Level","scene/");		
 			}

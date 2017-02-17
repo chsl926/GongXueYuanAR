@@ -139,6 +139,7 @@ namespace SimpleFramework.Manager {
         }
         public void StopBG()
         {
+            audio.clip = null;
             audio.Stop();
         }
     }

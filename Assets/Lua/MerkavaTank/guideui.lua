@@ -15,7 +15,7 @@ this.__index = this
 function guideui.New(_scene)
     local self = { };
     setmetatable(self, this);
-    PanelManager:CreatePanel('guideui', this.OnCreate);
+   PanelManager:CreatePanel('guideui', this.OnCreate);
     scene = _scene;
     return self;
 end
@@ -74,6 +74,7 @@ function guideui.OnClick(go)
     if go.name == 'Quit' then
        prompt:ClearClick();
        --UpdateBeat:Clear();
+        MusicManager:StopBG();
        SceneManagement.SceneManager.LoadScene(0);
     end
 

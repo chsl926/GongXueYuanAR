@@ -76,7 +76,7 @@ function Scene.Show()
         local enemyobj = Object.Instantiate(ResManager:LoadAsset('enemy', 'enemy'));
         enemyobj.name = 'enemy'
         enemyobj.transform.parent = ImageTarget.gameObject.transform;
-        enemyobj.transform.localScale = Vector3.New(0.01, 0.01, 0.01);
+        enemyobj.transform.localScale = Vector3.New(0.03, 0.03, 0.03);
         -- this.gameStateManager = this.GameState.hide;
         local enemy = Enemy.Start(this)
         enemy.gameObject = enemyobj;
@@ -102,14 +102,14 @@ function Scene.Init()
     ImageAR = Object.Instantiate(Resources.Load('ImageAR'));
     ImageAR.name = 'ImageAR'
     ImageTarget = ImageAR.gameObject.transform:FindChild('ImageTarget'):GetComponent('EasyImageTargetBehaviour');
-    ImageTarget.Path = Application.persistentDataPath .. '/sbsar/Tank/namecard.jpg';
+    ImageTarget.Path = Application.persistentDataPath .. '/sbsar/MerkavaTank/idback.jpg';
     ImageTarget.Name = "namecard";
     -- 以下是同步从游戏目录加载资源
     local obj = Object.Instantiate(ResManager:LoadAsset('tank', 'tank'));
     obj.name = 'Player'
     obj.transform.parent = ImageTarget.gameObject.transform;
     obj.transform.localPosition = Vector3.New(0, 0, 0);
-    obj.transform.localScale = Vector3.New(0.01, 0.01, 0.01);
+    obj.transform.localScale = Vector3.New(0.03, 0.03, 0.03);
     this.player = Player.Start();
      this.player.gameObject=obj;
     GUIDebug.info='Create Player--->';

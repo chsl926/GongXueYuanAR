@@ -148,8 +148,6 @@ namespace SimpleFramework.Manager {
                 OnUpdateFailed(string.Empty);
                 yield break;
             }
-
-
             //if (!Directory.Exists(dataPath)) {
             //    Directory.CreateDirectory(dataPath);
             //}

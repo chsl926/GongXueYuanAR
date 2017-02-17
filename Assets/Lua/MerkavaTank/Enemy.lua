@@ -60,14 +60,15 @@ function Enemy.SetPos(obj)
 
     local point = Vector3.New(x, y, screenPosition.z);
     obj.transform.position = Camera.main:ScreenToWorldPoint(point);
-
+    -- obj.transform.localScale = Vector3.New(0.03, 0.03, 0.03);
     obj.transform.position = Vector3.New(obj.transform.position.x, scene.player.gameObject.transform.position.y, obj.transform.position.z);
     GUIDebug.info = serialize(scene.player.gameObject.transform.position);
     GUIDebug.info = GUIDebug.info .. serialize(obj.transform.position);
 end
  
 
-
+ function Enemy.CountPos()
+ end
 
 function Enemy.Update()
     if this == nil or this.gameObject == nil then

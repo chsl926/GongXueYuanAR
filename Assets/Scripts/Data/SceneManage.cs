@@ -29,7 +29,7 @@ public class SceneManage : Manager {
 		dataDict.Clear ();
         sceneData.Clear();
         XmlDocument xml = new XmlDocument ();
-        string path =SimpleFramework.Util.DataPath+ "/SceneData.xml";
+        string path =SimpleFramework.Util.DataPath+ "SceneData.xml";
 		if (!File.Exists (path)) {
 			Debug.Log ("SceneData.xml not find");
 			return;
