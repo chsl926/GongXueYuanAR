@@ -49,15 +49,15 @@ public class SDK : MonoBehaviour
     //Alpha oAlpha;
 
 #if UNITY_ANDROID
-    public static readonly string _aliTarget = "_apk";
-    public static readonly string _pathSpeak = "/speak/";
-    public static readonly string _pathLocal = Config.DirPath + "/";
-    public static readonly string _pathUrl = "file://";
+    public static  string _aliTarget = "_apk";
+    public static  string _pathSpeak = "/speak/";
+    public static  string _pathLocal = Config.DirPath + "/";
+    public static  string _pathUrl = "file://";
     //android 实例
     private static AndroidJavaObject m_jo;
     void Start()
     {
-       
+        _pathLocal = Config.DirPath + "/";
         sdk = this;
         ShowGui.info += "初始化sdk\n";
         AndroidJavaClass jc = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
@@ -185,13 +185,13 @@ public class SDK : MonoBehaviour
   //  	[DllImport("__Internal")]
 		//public static extern string GetIOSVersion ();	
 	}
-	public static readonly string _aliTarget 	=	"_ios";
+	public static  string _aliTarget 	=	"_ios";
 	public static string _pathSpeak ;
 	public static string _pathLocal	;
 	public static string _pathUrl 	= "file://localhost/";
 	void Start () {
 		_pathSpeak 	= "/speak/";
-		_pathLocal	= Application.persistentDataPath + "/";
+        _pathLocal = Config.DirPath + "/";
 		CheckDirWithFile(_pathSpeak);
         InitThreadPool();
 	}
@@ -278,15 +278,21 @@ public class SDK : MonoBehaviour
  //       return str.ToUpper();
  //   }
 #elif UNITY_STANDALONE_WIN || UNITY_EDITOR
-    public static readonly string _aliTarget = "_pc";
-    public static string _pathLocal = "";
+    public static  string _aliTarget = "_pc";
+    public static string _pathLocal = Config.DirPath + "/";
     public static string _pathUrl = "file:///";
 
     void Awake()
     {
         InitThreadPool();
         DontDestroyOnLoad(this);
+
     }
+    void Start()
+    {
+        _pathLocal = Config.DirPath + "/";
+    }
+
     //通讯录
     public static int GetCount()//人数
     {
@@ -332,6 +338,7 @@ public class SDK : MonoBehaviour
         byte[] bt = System.Convert.FromBase64String(strImage);
         GetPhotoAction(bt);
     }
+    public static System.Action<string> CancelBack;
     #region 首字母拼音
     ///   <summary> 
 
@@ -723,6 +730,23 @@ public class SDK : MonoBehaviour
         if (ali.listDone.Count > 0)
         {
             string o = ali.listDone[0];
+            //查看取消列表
+            for (int i = 0; i < ali.CancelList.Count; i++)
+            {
+                string[] str = ali.HashCount[o].remoteName.Split('.');
+                if (str[0] == ali.CancelList[i])
+                {
+                    if (CancelBack != null)
+                    {
+                        CancelBack(str[0].Split('/')[1]);
+                        ali.CancelList.Remove(ali.HashCount[o].remoteName);
+                        ali.listDone.RemoveAt(0);
+                    }
+                    return;
+                }
+            }
+           
+
             if (ali.HashCount[o].state == ALI_STATE.DONE)
             {
                 if (ali.HashCount[o].type == ALI_TYPE.DOWNLOAD_ASSET)
@@ -1018,6 +1042,7 @@ public class SDK : MonoBehaviour
     }
     #endregion
 
+    
     #region 下载场景
 
     //public static void LoadScene(string strSrc, string strLocalDir)
@@ -1307,7 +1332,6 @@ public class SDK : MonoBehaviour
         //}
     }
     #endregion
-
     #region 下载文本
     public static void DoDownLoadText(string strSrc, string strLocalDir, string strSign, System.Action<string> callback)
     {
@@ -1365,6 +1389,12 @@ public class SDK : MonoBehaviour
         pa = null;
     }
     #endregion
+    #region 取消下载
+    public static  void  CancelLoad(string name)
+    {
+        ali.CancelList.Add(name);
+    }
+     #endregion
 
     #region 退出程序结束阿里云线程
     void OnApplicationQuit()

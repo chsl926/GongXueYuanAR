@@ -7,7 +7,7 @@ using System;
 
 public class Debuger
 {
-    public static bool IsDebug = false;
+    public static bool IsDebug = true;
 
     public static void Log(object message)
     {

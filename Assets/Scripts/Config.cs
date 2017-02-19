@@ -23,11 +23,11 @@ public class Config : MonoBehaviour
 	FileURL="file:"+Application.persistentDataPath";
 	 DirPath=Application.persistentDataPath;  
 #elif  UNITY_EDITOR
-  FileURL = "file://" + Application.streamingAssetsPath+"/" ;
-      DirPath = Application.streamingAssetsPath;
+  FileURL = "file://" + Application.streamingAssetsPath + "/" ;
+        DirPath ="c:/";
 #elif UNITY_STANDALONE_WIN 
   FileURL = "file://" + Application.persistentDataPath+"/";
-      DirPath = Application.persistentDataPath;
+       DirPath ="c:/";
 #else
        PathURL= string.Empty;
 #endif

@@ -101,6 +101,7 @@ public class Aliyun
     public Dictionary<string, SomeState> HashCount = new Dictionary<string, SomeState>();//保存每个线程 数据
     public List<SomeState> waitList = new List<SomeState>();//等待下载队列
     public List<string> listDone = new List<string>();//已经执行完毕的线程
+    public List<string> CancelList = new List<string>();//取消的下载
     public bool bShutdown = false;//中断
     
 
